@@ -1,0 +1,10 @@
+{
+    "rewrites": [
+      { "source": "/", "destination": "/site/index.html" },
+      { "source": "/about", "destination": "/site/about.html" },
+      { "source": "/math", "destination": "/site/math.html" },
+      { "source": "/quant_marketstat_ws", "destination": "/site/quant_marketstat_ws.html" },
+      { "source": "/game", "destination": "/index.html" }
+    ]
+  }
+  
