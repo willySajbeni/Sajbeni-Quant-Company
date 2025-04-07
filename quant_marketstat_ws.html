@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>quant_marketstat_ws - Rust CLI Tool</title>
+  <link rel="icon" type="image/x-icon" href="assets/logo_site.png">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <img src="assets/SQC_logo.jpg" alt="Logo" class="logo" />
+    <h1>quant_marketstat_ws</h1>
+    <p class="tagline">CLI tool in Rust for market statistics and real-time analytics</p>
+  </header>
+
+  <section class="section">
+    <div class="project-card">
+      <h2>🦀📊 MarketStat — High-Performance Financial Stats Engine in Rust</h2>
+      <p>
+        <strong>MarketStat</strong> (a.k.a. <code>quant_marketstat_ws</code>) is a blazing-fast, quantitative financial analytics CLI engine, crafted in Rust by Willy Sajbeni.<br>
+        Ideal for traders, quants, and data scientists who need low-latency, high-integrity insights extracted from price/volume data.
+      </p>
+  
+      <h3>📦 Quick Install</h3>
+      <pre><code>cargo install quant_marketstat_ws
+  quant_marketstat_ws</code></pre>
+  
+      <h3>✅ Features</h3>
+      <ul>
+        <li>✔️ Arithmetic Mean</li>
+        <li>✔️ VWAP (Volume Weighted Average Price)</li>
+        <li>✔️ VWAP Group (Bid/Ask average)</li>
+        <li>✔️ Variance (Sample & Population)</li>
+        <li>✔️ Standard Deviation (STD)</li>
+        <li>✔️ VWAP Variance & VWAP STD</li>
+        <li>✔️ Group VWAP Variance & STD</li>
+        <li>📈 Global Summary with human-readable interpretations</li>
+        <li>📂 CSV Data Import (Option 11)</li>
+        <li>🦀 Built in pure Rust — fast, safe, and lightweight</li>
+      </ul>
+  
+      <h3>🖥️ CLI Menu Preview</h3>
+      <pre><code>Choose a function:
+  1 - Mean
+  2 - VWAP
+  3 - VWAP Group
+  4 - Variance
+  5 - STD
+  6 - VWAP Variance
+  7 - VWAP STD
+  8 - VWAP Group Variance
+  9 - VWAP Group STD
+  10 - Full Market Stats Report (Global Summary)
+  11 - Load data from CSV (Bid, Ask, Volume)</code></pre>
+  
+      <h3>📊 CSV Format Example (for Option 11)</h3>
+      <pre><code>Bid,Ask,Volume
+  10.5,11.0,1000
+  10.6,11.1,1500
+  10.4,10.9,1200</code></pre>
+  
+      <p><strong>Instructions:</strong></p>
+      <ul>
+        <li>Save your file as <code>data.csv</code></li>
+        <li>Place it in the same folder where you run <code>cargo run</code></li>
+        <li>When prompted, just type: <code>data.csv</code></li>
+        <li>You can type <code>x</code> to cancel if you change your mind</li>
+        <li>The system loops until a valid file is found</li>
+      </ul>
+  
+      <h3>📝 License</h3>
+      <p>MIT License — built and maintained by Willy Sajbeni</p>
+  
+      <h3>🦀 Why Rust over Python?</h3>
+      <p>Because speed, safety, and clarity matter.<br>
+      This crab 🦀 just decapitated the snake 🐍 — with both claws!</p>
+  
+      <h3>🚀 Coming Soon</h3>
+      <ul>
+        <li>📡 Yahoo Finance real-time fetch (optional)</li>
+        <li>📊 Graphs and interactive charts via TUI</li>
+        <li>📦 Binary executables (.exe, .app, ELF) for all platforms</li>
+      </ul>
+  
+      <h3>👨‍💻 Author</h3>
+      <p>
+        Developed with love and mathematical rigor by <strong>Willy Sajbeni</strong><br>
+        Follow on <a href="https://www.linkedin.com/in/sajbeni" target="_blank">LinkedIn</a> |
+        <a href="https://github.com/searchupunk" target="_blank">GitHub</a><br>
+        <em>Quantitative AI & Algorithmic Research | Linux, Rust, Python & Mathematical Modeling for Quant Trading</em>
+      </p>
+  
+      <h3>🔗 External Links</h3>
+      <ul>
+        <li><a href="https://crates.io/crates/quant_marketstat_ws" target="_blank">Crates.io Package</a></li>
+        <li><a href="https://github.com/willysajbeni/quant_marketstat_ws" target="_blank">GitHub Repository</a></li>
+      </ul>
+    </div>
+  </section>
+  
+
+  <footer>
+    <div class="footer-links">
+      <a href="math.html">← Back to Quant Projects</a>
+    </div>
+  </footer>
+</body>
+</html>
