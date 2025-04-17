@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>USD Arbitrage com Rust – Estratégias HFT em FX</title>
+  <link rel="icon" type="image/x-icon" href="assets/logo_site.png">
+  <link href="style.css" rel="stylesheet">
+  <meta name="description" content="How High-Frequency Trading strategies detect inefficiencies in the currency market, with a simulation in pure Rust.">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Willy Sajbeni">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sajbeni Quant Company">
+  <meta property="og:description" content="Open-source Rust-powered tools for quants, traders, and data scientists.">
+  <meta property="og:url" content="https://www.searchupunk.com.br/quant_fx_arb_hft.html">
+  <meta property="og:image" content="https://www.searchupunk.com.br/assets/SQC_logo.jpg">
+</head>
+
+<body>
+  <header>
+    <img src="assets/SQC_logo.jpg" alt="Logo" class="logo" />
+    <h1>USD Arbitrage with Rust 🦀</h1>
+    <p class="tagline">How High-Frequency Strategies Identify Inefficiencies in the Currency Market (USD)</p>
+  </header>
+
+  <section class="section">
+    <div class="project-card">
+      <h2>Introduction</h2>
+      <p>In the world of finance — especially in the foreign exchange (FX) market — milliseconds matter. High-Frequency Trading (HFT) strategies thrive on detecting temporary price inefficiencies, like those between the spot and futures markets for the U.S. dollar.</p>
+
+      <p>This price gap, known as the FX spread, might last only a fraction of a second, but it’s often enough to generate a profit. In this post, we’ll break down the math behind it and simulate the logic in pure Rust — no external libraries.</p>
+
+      <h3>📉 What Is Currency Arbitrage?</h3>
+      <ul>
+        <li>Let’s consider a realistic example:</li>
+        <li>Spot Dollar (cash market): R$5.00</li>
+        <li>Futures Dollar (near maturity): R$5.05</li>
+      </ul>
+      <p>This 5-cent difference can be caused by interest rates, liquidity imbalances, latency, or asymmetric market reactions.</p>
+
+      <p>The role of an HFT system is to:</p>
+      <ul>
+        <li>Buy in the cheaper market (R$5.00 spot)</li>
+        <li>Sell in the more expensive one (R$5.05 futures)</li>
+        <li>Profit = price difference – operational costs</li>
+      </ul>
+
+      <h3>🔢 The Math of Arbitrage</h3>
+      <pre><code>spread = sell_price - buy_price
+spread &gt; transaction_cost ⇒ oportunidade lucrativa</code></pre>
+
+      <p><strong>Example:</strong></p>
+      <ul>
+        <li>Buy USD in the spot market at R$5.00</li>
+        <li>Sell it via futures contract at R$5.05</li>
+        <li>Transaction cost (fees, slippage, etc.): R$0.01</li>
+        <li>Spread: R$0.05</li>
+        <li>Net profit per dollar: R$0.04</li>
+      </ul>
+      <p>With a contract of $100,000, that’s R$4,000 profit, potentially in milliseconds.</p>
+
+      <h3>🦀 Simulating FX Arbitrage in Pure Rust</h3>
+      <p>Here’s a simple HFT-style simulation in Rust using threads and channels.</p>
+      <pre><code class="language-rust">use rand::Rng;
+
+
+        use std::thread;
+        use std::sync::mpsc;
+        use std::time::{Duration, Instant};
+        
+        fn main() {
+            let (tx, rx) = mpsc::channel();
+        
+            // Simulate spot dollar market (faster, more liquid)
+            let tx1 = tx.clone();
+            thread::spawn(move || {
+                let mut spot = 5.00;
+                loop {
+                    spot += offset();
+                    tx1.send(("spot", spot)).unwrap();
+                    thread::sleep(Duration::from_millis(150));
+                }
+            });
+        
+            // Simulate futures dollar market (slightly delayed)
+            let tx2 = tx.clone();
+            thread::spawn(move || {
+                let mut future = 5.03;
+                loop {
+                    future += offset();
+                    tx2.send(("future", future)).unwrap();
+                    thread::sleep(Duration::from_millis(300));
+                }
+            });
+        
+            let mut spot = 0.0;
+            let mut future = 0.0;
+            let cost = 0.005; // operational cost per dollar
+            let mut timer = Instant::now();
+        
+            for (market, price) in rx {
+                match market {
+                    "spot" => spot = price,
+                    "future" => future = price,
+                    _ => {}
+                }
+        
+                let spread = future - spot;
+                if spread > cost {
+                    println!(
+                        "💰 Arbitrage detected: Buy spot at R${:.2} and sell future at R${:.2} | Gross profit: R${:.2}",
+                        spot, future, spread - cost
+                    );
+                }
+        
+                if timer.elapsed().as_secs() >= 1 {
+                    println!("🟢 Spot: R${:.2} | 🔵 Future: R${:.2}", spot, future);
+                    timer = Instant::now();
+                }
+            }
+        }
+        
+        // Simulated price fluctuation
+        fn offset() -> f64 {
+            let millis = std::time::SystemTime::now()
+                .duration_since(std::time::UNIX_EPOCH)
+                .unwrap()
+                .subsec_millis();
+            let osc = (millis % 5) as f64 - 2.0;
+            osc * 0.001 // fluctuation between -0.002 and +0.002
+        }
+        </code></pre>
+
+      <h3>🧾 Code Breakdown</h3>
+      <ul>
+        <li>Two threads simulate spot and futures dollar markets.</li>
+        <li>Each sends slightly fluctuating prices.</li>
+        <li>The main thread listens, compares, and checks for arbitrage.</li>
+        <li>If the spread exceeds the cost → opportunity detected.</li>
+      </ul>
+
+      <h3>📌 Conclusion</h3>
+      <p>Currency arbitrage is a fertile ground for high-frequency strategies, even in emerging markets like Brazil. While this is a simplified model, it mirrors real-world systems: spotting fleeting price differences and acting with mathematical precision.</p>
+
+      <p>In the next post, we’ll explore how HFT strategies impound information into prices — and as always, we’ll do it with Rust code you can learn from and build on.</p>
+      <p>Let’s go deeper, one tick at a time. 🦀📈</p>
+    </div>
+  </section>
+
+  <nav class="hero">
+    <div class="footer-links">
+      <a href="quant_journal.html" class="hero-btn">🦀📈 Quant Journal</a>
+    </div>
+  </nav>
+
+  <footer>
+    <p>© 2025 Sajbeni Quant Company</p>
+  </footer>
+</body>
+</html>
