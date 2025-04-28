@@ -185,7 +185,51 @@
     gap: 1rem;
     padding: 2rem;
   }
+  .responsive-image {
+    max-width: 100%;
+    height: auto;
+  }
   
+  /* Código destacado */
+code {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: #f8f8f2;
+}
+
+/* Highlight no código */
+.keyword {
+  color: #569cd6; /* Azul */
+}
+
+.type {
+  color: #c586c0; /* Roxo */
+}
+
+.string {
+  color: #ce9178; /* Vermelho */
+}
+
+.function {
+  font-weight: bold;
+  color: #dcdcaa; /* Amarelo Claro */
+}
+
+.comment {
+  color: #6a9955; /* Verde */
+  font-style: italic;
+}
+
+/* Melhor formatação de blocos de código */
+pre {
+  background-color: #111;
+  padding: 1.5rem;
+  border-radius: 10px;
+  overflow-x: auto;
+  box-shadow: 0 0 10px rgba(0, 204, 153, 0.15); /* Suave glow verde */
+  margin: 1rem 0;
+}
+
     
   
   

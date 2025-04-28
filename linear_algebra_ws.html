@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Building a Linear Algebra Engine in Rust — Part 1 by Willy Sajbeni">
+  <title>Building a Linear Algebra Engine in Rust — Part 1</title>
+  <link rel="icon" type="image/x-icon" href="assets/logo_site.png">
+  <link href="style.css" rel="stylesheet">
+  
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Willy Sajbeni">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Sajbeni Quant Company">
+  <meta property="og:description" content="Open-source Rust-powered tools for quants, traders, and data scientists.">
+  <meta property="og:url" content="https://www.searchupunk.com.br/linear_algebra_ws.html">
+  <meta property="og:image" content="https://www.searchupunk.com.br/assets/SQC_logo.jpg">
+
+</head>
+
+<body>
+  <header>
+    <img src="assets/SQC_logo.jpg" alt="Logo" class="logo" />
+    <h1>🦀📐 Building a Linear Algebra Engine in Rust — Part 1</h1>
+    <h2>Beyond Frameworks, No Shortcuts</h2>
+    <p>Everyone can import. Few can build. Let's change that.</p>
+  </header>
+
+  <section class="section">
+    <div class="project-card">
+        <h2>🦀📐 LinearAlgebra-WS — Minimalist Linear Algebra Engine in Rust</h2>
+
+        <p><strong>LinearAlgebra-WS</strong> is a transparent, minimal, and open-source linear algebra library built entirely in Rust by Willy Sajbeni. 
+        Ideal for students, researchers, engineers, and developers who value <strong>speed, privacy, and control</strong>.</p>
+        
+        <h2>Quick Install & Run</h2>
+        
+        <p><code>cargo install linear_algebra_ws</code><br><code>linear_algebra_ws</code></p>
+        
+        <h2>Current Features</h2>
+        
+        <ul>
+          <li>Vector Operations
+            <ul>
+              <li>Sum</li>
+              <li>Subtraction</li>
+              <li>Multiplication (element-wise)</li>
+              <li>Division (element-wise)</li>
+            </ul>
+          </li>
+          <li>User-friendly input system for vectors and matrices directly from the terminal</li>
+        </ul>
+        
+        <h2>Upcoming Features (Roadmap)</h2>
+        
+        <ul>
+          <li>Matrix Operations
+            <ul>
+              <li>Sum of Matrices</li>
+              <li>Subtraction of Matrices</li>
+              <li>Multiplication of Matrices</li>
+              <li>Matrix Inversion</li>
+              <li>Matrix Division (via Multiplication by Inverse)</li>
+              <li>LU Decomposition</li>
+              <li>Eigenvalues and Eigenvectors</li>
+            </ul>
+          </li>
+          <li>Advanced Numerical Methods
+            <ul>
+              <li>Iterative Methods (Jacobi, Gauss-Seidel)</li>
+              <li>Direct Methods (Gaussian Elimination, LU Factorization)</li>
+              <li>Conjugate Gradient Method (for sparse systems)</li>
+            </ul>
+          </li>
+          <li>Gradient Optimizers
+            <ul>
+              <li>Simple Gradient Descent</li>
+              <li>Stochastic Gradient Descent (SGD)</li>
+              <li>Adam Optimizer</li>
+              <li>RMSProp</li>
+            </ul>
+          </li>
+          <li>Dimensionality Reduction
+            <ul>
+              <li>PCA (Principal Component Analysis)</li>
+              <li>SVD (Singular Value Decomposition)</li>
+              <li>LLE (Locally Linear Embedding)</li>
+              <li>t-SNE (t-Distributed Stochastic Neighbor Embedding)</li>
+            </ul>
+          </li>
+        </ul>
+        
+        <h2>Philosophy</h2>
+        
+        <ul>
+          <li>100% Pure Rust</li>
+          <li>Zero telemetry, zero tracking</li>
+          <li>Educational and extendable</li>
+          <li>Mathematical clarity prioritized over raw performance</li>
+          <li>Fully Open Source (MIT License)</li>
+        </ul>
+        
+        <h2>Why This Project?</h2>
+        
+        <p>Most modern machine learning libraries (TensorFlow, PyTorch, etc.) embed telemetry and hidden behaviors. 
+        <strong>LinearAlgebra-WS</strong> is different — it's completely open, simple, transparent, and under your full control. 
+        No tracking. No hidden code. Just math.</p>
+        
+        <p>After receiving hundreds of messages, questions, and pieces of advice — and being deeply grateful to the community — 
+        I decided to take a step back to leap much further ahead. This is the start of a long-term project: building, from scratch and without external libraries, 
+        everything behind what powers HFT, Machine Learning, Deep Learning, and AI today.</p>
+        
+        <p>Linear Algebra is the foundation of nearly every operation in these fields. 
+        From strategy optimization in HFT to the inner workings of machine learning models and neural networks, 
+        vectors, matrices, and linear transformations are the core. Without a solid foundation at this level, 
+        everything else becomes a misunderstood black box.</p>
+        
+        <h2>Current Progress</h2>
+        
+        <p>I have implemented basic vector operations (sum, subtraction, multiplication, element-wise division), 
+        which are fundamental for building more complex numerical engines.</p>
+        
+        <h2>What's Coming Next?</h2>
+        
+        <ul>
+          <li>Matrix Operations</li>
+          <li>Advanced Numerical Methods (Jacobi, Gauss-Seidel, Gaussian Elimination)</li>
+          <li>Gradient Optimizers (SGD, Adam, RMSProp)</li>
+          <li>Dimensionality Reduction (PCA, SVD, t-SNE, LLE)</li>
+        </ul>
+        
+        <h2>Vision and Challenges</h2>
+        
+        <p>Today, many data scientists and engineers know how to use pre-built frameworks but lack deep understanding of what happens internally. 
+        For example, TensorFlow is not truly Python — it’s a heavily optimized C++ core. 
+        Understanding these internals is the difference between being a user and a true builder of technology.</p>
+        
+        <p>My goal is to build a "TensorFlow from scratch" and a complete HFT infrastructure from scratch. 
+        This requires patience, discipline, and a lot of study — but through this journey, we can achieve real excellence.</p>
+        
+        <h2>Why Rust?</h2>
+        
+        <p>I chose Rust because it is the most brilliantly designed programming language today. 
+        It forces manual memory control, modular design, respect for ownership, and long-term system architecture thinking. 
+        The genius of the Rust community is visible in details like the "&" symbol, which forces explicit sharing and borrowing. 
+        This reduces memory usage, prevents duplication, increases speed, and eliminates garbage collection reliance — 
+        critical for fields like HFT and AI where every microsecond and byte matters.</p>
+        
+        <h2>License</h2>
+        
+        <p>This project is licensed under the MIT License.</p>
+        
+        <h2>Contact and Follow</h2>
+        
+        <ul>
+          <li>Website: <a href="https://www.sajbeni.com" target="_blank">www.sajbeni.com</a></li>
+          <li>Email: willy@sajbeni.com</li>
+          <li>GitHub: <a href="https://github.com/willySajbeni" target="_blank">github.com/willySajbeni</a></li>
+          <li>Crate on crates.io: <a href="https://crates.io/crates/linear_algebra_ws" target="_blank">linear_algebra_ws</a></li>
+        </ul>
+        
+      <p>Here’s a simple HFT-style simulation in Rust using threads and channels.</p>
+      <div class="project-card">
+        <h3>linear_algebra_ws</h3>
+        <pre><code>
+      <span class="comment">// linear_algebra_ws</span>
+      <span class="comment">// Author: Willy Sajbeni</span>
+      <span class="comment">// Website: https://www.sajbeni.com</span>
+      <span class="comment">// GitHub: https://github.com/willySajbeni</span>
+      <span class="comment">// LinkedIn: https://www.linkedin.com/in/willysajbeni/</span>
+      <span class="comment">// Email: willy@sajbeni.com</span>
+      
+      <span class="comment">// Structure definition:</span>
+      <span class="comment">// A Vector will have a field called data, and this field is a Vec&lt;f64&gt;.</span>
+      <span class="comment">// When inserting a vector, the v1 object really exists, and v1.data has a Vec&lt;f64&gt; inside, e.g., [1.0, 2.0, 3.0].</span>
+      <span class="comment">// There, the 'let' binding is created.</span>
+      
+      <span class="keyword">#[derive</span>(<span class="type">Debug</span>)]
+      <span class="keyword">pub struct</span> <span class="type">Vector</span> {
+          data: <span class="type">Vec&lt;f64&gt;</span>,
+      }
+      
+      <span class="comment">// We are implementing methods for the Vector type.</span>
+      <span class="keyword">impl</span> <span class="type">Vector</span> {
+          <span class="keyword">pub fn</span> <span class="function">new</span>(data: <span class="type">Vec&lt;f64&gt;</span>) -> <span class="type">Self</span> {
+              <span class="type">Vector</span> { data }
+          }
+      
+          <span class="comment">// Vector addition: v1 + v2 = [a1+b1, a2+b2, a3+b3]</span>
+          <span class="comment">// Creating a function called add:</span>
+          <span class="keyword">pub fn</span> <span class="function">add</span>(&self, other: &<span class="type">Self</span>) -> <span class="type">Self</span> {
+              <span class="comment">// - &self ➔ the vector that calls the method</span>
+              <span class="comment">// - &other ➔ another vector to add</span>
+              <span class="comment">// - Returns ➔ a new Vector</span>
+              <span class="function">assert_eq</span>(self.data.len(), other.data.len(), <span class="string">"Vectors must be the same size for addition."</span>);
+      
+              <span class="keyword">let</span> data = self.data.iter()
+                  .zip(&other.data)
+                  .map(|(x, y)| x + y)
+                  .collect();
+      
+              <span class="type">Vector::new</span>(data)
+          }
+      
+          <span class="comment">// Vector subtraction: v1 - v2 = [a1-b1, a2-b2, a3-b3]</span>
+          <span class="comment">// Creating a function called subtract:</span>
+          <span class="keyword">pub fn</span> <span class="function">subtract</span>(&self, other: &<span class="type">Self</span>) -> <span class="type">Self</span> {
+              <span class="comment">// - &self ➔ the vector that calls the method</span>
+              <span class="comment">// - &other ➔ another vector to subtract</span>
+              <span class="comment">// - Returns ➔ a new Vector</span>
+              <span class="function">assert_eq</span>(self.data.len(), other.data.len(), <span class="string">"Vectors must be the same size for subtraction."</span>);
+      
+              <span class="keyword">let</span> data = self.data.iter()
+                  .zip(&other.data)
+                  .map(|(x, y)| x - y)
+                  .collect();
+      
+              <span class="type">Vector::new</span>(data)
+          }
+      
+          <span class="comment">// Element-wise multiplication of vectors: v1 × v2 = [a1×b1, a2×b2, a3×b3]</span>
+          <span class="comment">// Creating a function called multiply:</span>
+          <span class="keyword">pub fn</span> <span class="function">multiply</span>(&self, other: &<span class="type">Self</span>) -> <span class="type">Self</span> {
+              <span class="comment">// - &self ➔ the vector that calls the method</span>
+              <span class="comment">// - &other ➔ another vector to multiply</span>
+              <span class="comment">// - Returns ➔ a new Vector</span>
+              <span class="function">assert_eq</span>(self.data.len(), other.data.len(), <span class="string">"Vectors must be the same size for multiplication."</span>);
+      
+              <span class="keyword">let</span> data = self.data.iter()
+                  .zip(&other.data)
+                  .map(|(x, y)| x * y)
+                  .collect();
+      
+              <span class="type">Vector::new</span>(data)
+          }
+      
+          <span class="comment">// Element-wise division of vectors (Multiplication by Inverse)</span>
+          <span class="comment">// Instead of traditional division, we multiply by the inverse of each element.</span>
+          <span class="comment">// Formula: v1 / v2 = [a1×(1/b1), a2×(1/b2), a3×(1/b3)]</span>
+          <span class="comment">// Important: Check for division by zero!</span>
+          <span class="keyword">pub fn</span> <span class="function">element_wise_division</span>(&self, other: &<span class="type">Self</span>) -> <span class="type">Self</span> {
+              <span class="comment">// Validate vectors are the same size</span>
+              <span class="function">assert_eq</span>(self.data.len(), other.data.len(), <span class="string">"Vectors must be the same size for division."</span>);
+              <span class="comment">// Ensure no division by zero</span>
+              <span class="function">assert!</span>(!other.data.iter().any(|&x| x == 0.0), <span class="string">"Cannot divide by zero."</span>);
+      
+              <span class="keyword">let</span> data = self.data.iter()
+                  .zip(&other.data)
+                  .map(|(x, y)| x * (1.0 / y))
+                  .collect();
+      
+              <span class="type">Vector::new</span>(data)
+          }
+      }
+        </code></pre>
+      </div>
+      
+        <img src="assets/sajbeni_Linear_Algebra.gif" alt="Logo" class="responsive-image language-rust" width="753" height="500" />
+        <h3>Code Breakdown</h3>
+
+        <ul>
+          <li>Defines a <strong>Vector</strong> structure holding a <code>Vec&lt;f64&gt;</code> as its data.</li>
+          <li>Implements basic vector operations:
+            <ul>
+              <li><strong>Addition</strong>: Element-wise sum between two vectors.</li>
+              <li><strong>Subtraction</strong>: Element-wise subtraction between two vectors.</li>
+              <li><strong>Multiplication</strong>: Element-wise multiplication between two vectors.</li>
+              <li><strong>Division</strong>: Element-wise division by multiplying one vector by the inverse of another, ensuring no division by zero.</li>
+            </ul>
+          </li>
+          <li>Each operation checks if vectors are the same size before proceeding.</li>
+          <li>Operations are performed using iterators, <code>zip</code>, and <code>map</code> for clean, efficient computation.</li>
+          <li>New <strong>Vector</strong> instances are returned after each operation.</li>
+        </ul>
+    </br>
+        <h3>Conclusion</h3>
+        <p>Linear Algebra is the true foundation behind high-frequency trading, machine learning, deep learning, and artificial intelligence. With <strong>LinearAlgebra-WS</strong>, we return to the roots — building mathematics from scratch, without black boxes, with full transparency and control.</p>
+        
+        <p>This is just the beginning: mastering basic vector operations unlocks the door to deeper and more powerful numerical computation. By understanding these core structures, we can move beyond using frameworks and start truly creating the next generation of intelligent systems.</p>
+        
+        <p>In future updates, we'll expand into matrix operations, optimizers, dimensionality reduction, and more — all in pure Rust, fully open source, and ready for real-world HFT, ML, DL, and AI challenges.</p>
+        
+        <p>Let's rebuild the future, one vector at a time. 🦀📐</p>
+        
+    </div>
+  </section>
+
+  <nav class="hero">
+    <div class="footer-links">
+      <a href="quant_journal.html" class="hero-btn">🦀📈 Quant Journal</a>
+    </div>
+  </nav>
+
+  <footer>
+    <p>© 2025 Sajbeni Quant Company</p>
+  </footer>
+</body>
+</html>
