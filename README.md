@@ -1,6 +1,6 @@
 ## Sajbeni Quant Company — Official Website
 
-This is the official website of Sajbeni Quant Company, a personal and professional initiative focused on mathematical innovation for quantitative finance, artificial intelligence, and open-source technology.
+This is the official website of Sajbeni Quant Co., a personal and professional initiative focused on mathematical innovation for quantitative finance, artificial intelligence, and open-source technology.
 ## ✨ Sections
 
     📈 Quant Projects – Publications and mathematical tools built in Rust.
@@ -26,6 +26,8 @@ This is the official website of Sajbeni Quant Company, a personal and profession
 
 🌐 Access
 
-Website: https://searchupunk.com
+Website: https://sajbeni.com
 GitHub: https://github.com/willysajbeni
 Crates.io: https://crates.io/users/willysajbeni
+Instagram: https://www.instagram.com/sajbeniquantco/
+LinkedIn: https://www.linkedin.com/in/willysajbeni/
